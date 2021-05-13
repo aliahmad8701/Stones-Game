@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="285.0" prefWidth="506.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="app.controller.MainMenuController">
+    <children>
+        <TextField fx:id="txtPlayer1" layoutX="254.0" layoutY="124.0"/>
+        <TextField fx:id="txtPlayer2" layoutX="254.0" layoutY="163.0"/>
+        <Button layoutX="164.0" layoutY="214.0" mnemonicParsing="false" onAction="#onSubmit" text="Continue"/>
+        <Label layoutX="95.0" layoutY="128.0" text="Enter Player 1 Name:"/>
+        <Label layoutX="95.0" layoutY="167.0" text="Enter Player 2 Name:"/>
+        <Label layoutX="164.0" layoutY="54.0" text="Welcome to Stones" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="18.0"/>
+            </font>
+        </Label>
+        <Button layoutX="253.0" layoutY="214.0" mnemonicParsing="false" onAction="#onLeaderboardPressed"
+                text="Leaderboard"/>
+    </children>
+</AnchorPane>
