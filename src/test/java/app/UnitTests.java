@@ -3,8 +3,8 @@ package app;
 import app.model.Exceptions;
 import app.model.Game;
 import app.model.Player;
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class UnitTests {
 
@@ -25,11 +25,12 @@ public class UnitTests {
             game.playRound(0, 0);
             game.playRound(0, 1);
             game.playRound(0, 0);
-            Assert.assertEquals(3, game.getTurns());
-        } catch (Exceptions.NoActivePlayerException | Exceptions.CellEvolvedException e) {
-            Assert.fail();
+            assertEquals(3, game.getTurns(), () -> "test1 error");
+        }  catch (Exceptions.NoActivePlayerException | Exceptions.CellEvolvedException e) {
+            assertTrue(fail());
         }
     }
+	
 
     @Test
     public void shouldWinRedRowZero() {
@@ -38,9 +39,9 @@ public class UnitTests {
             game.playRound(0, 0);
             game.playRound(0, 1);
             game.playRound(0, 2);
-            Assert.assertTrue(game.gameWon());
+            assertTrue(game.gameWon());
         } catch (Exceptions.NoActivePlayerException | Exceptions.CellEvolvedException e) {
-            Assert.fail();
+            assertTrue(fail());
         }
     }
 
@@ -51,9 +52,9 @@ public class UnitTests {
             game.playRound(0, 0);
             game.playRound(0, 1);
             game.playRound(0, 1);
-            Assert.assertFalse(game.gameWon());
+            assertFalse(game.gameWon());
         } catch (Exceptions.NoActivePlayerException | Exceptions.CellEvolvedException e) {
-            Assert.fail();
+            assertTrue(fail());
         }
     }
 
@@ -64,9 +65,9 @@ public class UnitTests {
             game.playRound(0, 0);
             game.playRound(1, 0);
             game.playRound(2, 0);
-            Assert.assertTrue(game.gameWon());
+            assertTrue(game.gameWon());
         } catch (Exceptions.NoActivePlayerException | Exceptions.CellEvolvedException e) {
-            Assert.fail();
+            assertTrue(fail());
         }
     }
 
@@ -78,9 +79,9 @@ public class UnitTests {
             game.playRound(1, 0);
             game.playRound(1, 0);
             game.playRound(2, 0);
-            Assert.assertFalse(game.gameWon());
+            assertFalse(game.gameWon());
         } catch (Exceptions.NoActivePlayerException | Exceptions.CellEvolvedException e) {
-            Assert.fail();
+            assertTrue(fail());
         }
     }
 
@@ -91,9 +92,9 @@ public class UnitTests {
             game.playRound(0, 0);
             game.playRound(1, 1);
             game.playRound(2, 2);
-            Assert.assertTrue(game.gameWon());
+            assertTrue(game.gameWon());
         } catch (Exceptions.NoActivePlayerException | Exceptions.CellEvolvedException e) {
-            Assert.fail();
+            assertTrue(fail());
         }
     }
 
@@ -105,9 +106,9 @@ public class UnitTests {
             game.playRound(1, 1);
             game.playRound(1, 1);
             game.playRound(2, 2);
-            Assert.assertFalse(game.gameWon());
+            assertFalse(game.gameWon());
         } catch (Exceptions.NoActivePlayerException | Exceptions.CellEvolvedException e) {
-            Assert.fail();
+            assertTrue(fail());
         }
     }
 
@@ -120,11 +121,11 @@ public class UnitTests {
             game.playRound(0, 0);
             game.playRound(0, 0);
             game.playRound(0, 0);
-            Assert.fail();
+            assertTrue(fail());
         } catch (Exceptions.CellEvolvedException e) {
-            Assert.assertTrue(true);
+            assertTrue(true);
         } catch (Exceptions.NoActivePlayerException e) {
-            Assert.fail("No active player.");
+	     assertTrue(fail("No active player."));
         }
     }
 
@@ -135,9 +136,9 @@ public class UnitTests {
             game.playRound(0, 0);
             game.playRound(0, 1);
             game.playRound(0, 2);
-            Assert.assertEquals(game.getActivePlayer(), game.getPlayer1());
+            assertEquals(game.getActivePlayer(), game.getPlayer1());
         } catch (Exceptions.CellEvolvedException | Exceptions.NoActivePlayerException e) {
-            Assert.fail();
+	 assertTrue(fail());
         }
     }
 
@@ -149,9 +150,9 @@ public class UnitTests {
             game.playRound(0, 1);
             game.playRound(2, 2);
             game.playRound(0, 2);
-            Assert.assertEquals(game.getActivePlayer(), game.getPlayer2());
+            assertEquals(game.getActivePlayer(), game.getPlayer2());
         } catch (Exceptions.CellEvolvedException | Exceptions.NoActivePlayerException e) {
-            Assert.fail();
+            assertTrue(fail());
         }
     }
 }
