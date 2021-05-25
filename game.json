@@ -20,6 +20,14 @@
       "player2": "Ahmad",
       "winner": "Ali",
       "turns": 15
+    },
+    {
+      "gameDate": "May 25, 2021, 8:01:56 PM",
+      "player1": "alpha",
+      "player2": "beta ",
+      "winner": "alpha",
+      "turns": 21
     }
   ]
 }
+
