@@ -1,4 +1,4 @@
-# Stones-Game
+# Stones-Game v1.1
 
 ### General Information:
 - Game board consist of 3x3 cells.
@@ -6,7 +6,7 @@
 - Every cell can contain a stone of color red, Green or yellow by re-clicking on it:
 - Two player game, names of the players will be asked on the main menu.
 
-Note: The game consists of Business logic. OpenJFX, MVC architecture and Java Persistence, Used GSON to store the game results in game.json file.
+Note: The game consists of Business logic. OpenJFX, MVC architecture and Java Persistence, Used GSON to store the game results using JSON formatting in game.json file.
     
 ### Game Goal:
 - One there is same color in a row,column or diagonal same like Tic tac toe.
