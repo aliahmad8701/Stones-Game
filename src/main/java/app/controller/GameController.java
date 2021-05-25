@@ -4,6 +4,8 @@ import app.model.Cell;
 import app.model.Exceptions;
 import app.model.Game;
 import app.model.Leaderboard;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,14 +13,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import lombok.extern.slf4j.Slf4j;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 /**
  * Controller for the game view.
  */
+@Slf4j
 public class GameController {
-    private final Game game;
+    private Game game;
     @FXML
     Button btn0x0;
     @FXML
@@ -77,12 +83,18 @@ public class GameController {
         try {
             cell = game.playRound(x, y);
             scene.lookup(String.format("#btn%dx%d", x, y)).setStyle(String.format("-fx-background-color: %s", getColorValue(cell.getColor())));
+            log.info("Cell {x}, {y} clicked", x, y);
             if (game.gameWon()) {
                 handleWonGame();
             } else {
                 lblStatus.setText(game.getActivePlayer().getName() + "'s turn to play.");
             }
-        } catch (Exceptions.NoActivePlayerException | Exceptions.CellEvolvedException ignored) {
+        } catch (Exceptions.NoActivePlayerException ex ){
+            log.error("No player has been made active");
+        }catch(Exceptions.CellEvolvedException ex){
+            log.error("Something went wrong with cells evolved!");
+        } catch (IOException ioException) {
+            log.error("Something went Wrong while handling won game, {}", ioException);
         }
     }
 
@@ -109,14 +121,17 @@ public class GameController {
     /**
      * Handle UI for a won game.
      */
-    void handleWonGame() {
+    void handleWonGame() throws IOException {
         lblStatus.setText(game.getActivePlayer().getName() + " won the game!");
         gameGrid.setDisable(true);
-        // Add to leaderboard
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
         game.getLeaderboard().addEntry(
                 new Leaderboard.LeaderboardEntry(game.getGameDate(), game.getPlayer1().getName(),
                         game.getPlayer2().getName(), game.getActivePlayer().getName(), game.getTurns())
         );
+        Files.write(Path.of("game.json"),gson.toJson(game.getLeaderboard()).getBytes());
+        log.info("Data has been persisted to JSON file");
     }
 
     /**
@@ -142,5 +157,7 @@ public class GameController {
         stage.setTitle("Main Menu");
         stage.setScene(scene);
         stage.show();
+        log.info("MainMenu scene is loading!!");
+
     }
 }

@@ -9,7 +9,7 @@ public class Game {
     private static final int ROWS = 3;
     private static final int COLS = 3;
     private static Game game = null;
-    private final Leaderboard leaderboard;
+    private Leaderboard leaderboard;
     private Cell[][] board;
     private Player player1;
     private Player player2;
@@ -45,6 +45,7 @@ public class Game {
                 board[row][col] = new Cell(row, col);
         gameDate = new Date();
         turns = 0;
+        leaderboard = new Leaderboard();
     }
 
     /**

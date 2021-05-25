@@ -1,20 +1,28 @@
 package app.model;
 
-import java.util.ArrayList;
-import java.util.Date;
+import com.google.gson.annotations.SerializedName;
+
+import java.util.*;
 
 /**
  * Represents the leaderboard.
  */
 public class Leaderboard {
-    private static final int LIMIT = 5;
-    private final ArrayList<LeaderboardEntry> entries;
+    private transient static final int LIMIT = 5;
+    private final Set<LeaderboardEntry> entries;
 
     /**
      * Create a new leaderboard.
      */
     public Leaderboard() {
-        entries = new ArrayList<>();
+        entries = new HashSet<>();
+    }
+
+    /**
+     * Create a new leaderboard.
+     */
+    public Leaderboard(Set<LeaderboardEntry> entries) {
+        this.entries = entries;
     }
 
     /**
@@ -33,7 +41,7 @@ public class Leaderboard {
      *
      * @return array list of entries.
      */
-    public ArrayList<LeaderboardEntry> getEntries() {
+    public Set<LeaderboardEntry> getEntries() {
         return entries;
     }
 
