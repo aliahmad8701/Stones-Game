@@ -5,7 +5,8 @@
 - Every cell is empty in the beginning.
 - Every cell can contain a stone of color red, Green or yellow by re-clicking on it:
 - Two player game, names of the players will be asked on the main menu.
-Note: The game consists of Business logic. OpenJFX, MVC architecture and Java Persistence. It stores the game results in game.json file.
+
+Note: The game consists of Business logic. OpenJFX, MVC architecture and Java Persistence, Used GSON to store the game results in game.json file.
     
 ### Game Goal:
 - One there is same color in a row,column or diagonal same like Tic tac toe.
@@ -34,7 +35,9 @@ Note: support added in pom.xml for JDK 16.
 
 ## App Installation Notes:
 Windows:
-- Use an IDE to run.
+- Use an IDE to compile to JAR and run with CMD: > java -jar <ExecutableJarFileName>.jar
 
 Linux:
-- In terminal to install use: mvn install, to run use: mvn exec:java
+- In terminal to install use: $ mvn install, to run use: $ mvn exec:java
+
+Note: You can see the project site in the target/site folder click in index.html to open the website. The Project site will be soon deployed. Link will be published in the About section of this repository.
