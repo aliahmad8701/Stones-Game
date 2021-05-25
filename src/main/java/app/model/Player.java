@@ -1,14 +1,14 @@
 package app.model;
 
 /**
- * Represents a player
+ * Represents a player.
  */
 public class Player {
 
     private final String name;
 
     /**
-     * Create a player
+     * Create a player.
      *
      * @param name the name of the player
      */
@@ -17,9 +17,9 @@ public class Player {
     }
 
     /**
-     * Get the name of the player
+     * Get the name of the player.
      *
-     * @return the name of the player
+     * @return the {@code name} of the player.
      */
     public String getName() {
         return name;
@@ -29,7 +29,7 @@ public class Player {
      * Overridden equals.
      *
      * @param o the other object
-     * @return true if equals, false otherwise.
+     * @return {@code true} if equals, {@code false} otherwise.
      */
     @Override
     public boolean equals(Object o) {

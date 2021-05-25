@@ -20,6 +20,7 @@ public class Leaderboard {
 
     /**
      * Create a new leaderboard.
+     * @param entries Sets Leaderboard Entry.
      */
     public Leaderboard(Set<LeaderboardEntry> entries) {
         this.entries = entries;
@@ -39,7 +40,7 @@ public class Leaderboard {
     /**
      * Get the list of entries.
      *
-     * @return array list of entries.
+     * @return array list of {@code entries}.
      */
     public Set<LeaderboardEntry> getEntries() {
         return entries;
@@ -56,7 +57,7 @@ public class Leaderboard {
         private final int turns;
 
         /**
-         * Create a new leaderboard entry
+         * Create a new leaderboard entry.
          *
          * @param gameDate the date of the game
          * @param player1  name of player 1
@@ -73,45 +74,45 @@ public class Leaderboard {
         }
 
         /**
-         * Get the game date
+         * Get the game date.
          *
-         * @return the game date
+         * @return the {@code gameDate}.
          */
         public Date getGameDate() {
             return gameDate;
         }
 
         /**
-         * Get the name of the player 1
+         * Get the name of the player 1.
          *
-         * @return the name of the player 1
+         * @return the name of the {@code player1}.
          */
         public String getPlayer1() {
             return player1;
         }
 
         /**
-         * Get the name of the player 2
+         * Get the name of the player 2.
          *
-         * @return the name of the player 2
+         * @return the name of the {@code player2}.
          */
         public String getPlayer2() {
             return player2;
         }
 
         /**
-         * Get the name of the winner
+         * Get the name of the winner.
          *
-         * @return the name of the winner
+         * @return the name of the {@code winner}.
          */
         public String getWinner() {
             return winner;
         }
 
         /**
-         * Get the number of turns played
+         * Get the number of turns played.
          *
-         * @return the number of turns played
+         * @return the number of {@code turns} played
          */
         public int getTurns() {
             return turns;

@@ -1,3 +1,5 @@
+// CHECKSTYLE:OFF
+
 package app.controller;
 
 import app.model.Game;
@@ -41,6 +43,7 @@ public class LeaderboardController {
 
     /**
      * Initialize the controller.
+     * @throws java.io.IOException
      */
     public void initialize() throws IOException {
         Game.getInstance().initGame();
