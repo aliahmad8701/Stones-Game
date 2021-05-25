@@ -17,7 +17,13 @@
 	- Number of Turns took by a player to win
 Not:The table can be sorted by time in game play
 
-## Requirements
+## Requirements:
 
 Building the project requires JDK 11 or later and [Apache Maven](https://maven.apache.org/).
 Note: support added in pom.xml for JDK 16.
+
+## App Installation Notes:
+Windows:
+- Use an IDE to run. 
+Linux:
+- In terminal to install use: mvn install, to run use: mvn exec:java
