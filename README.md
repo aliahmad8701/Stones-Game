@@ -34,6 +34,7 @@ Note: support added in pom.xml for JDK 16.
 
 ## App Installation Notes:
 Windows:
-- Use an IDE to run. 
+- Use an IDE to run.
+
 Linux:
 - In terminal to install use: mvn install, to run use: mvn exec:java
