@@ -1,9 +1,10 @@
+
 # Stones-Game v1.2
 
 ### General Information:
 - Game board consist of 3x3 cells.
 - Every cell is empty in the beginning.
-- Every cell can contain a stone of color red, Green or yellow by re-clicking on it:
+- Every cell can contain a stone of color Red, Yellow or Green by re-clicking on it:
 - Two player game, names of the players will be asked on the main menu.
 
 Note: The game consists of Business logic. OpenJFX, MVC architecture and Java Persistence, Used GSON to store the game results using JSON formatting in game.json file.
@@ -27,7 +28,7 @@ Note: The game consists of Business logic. OpenJFX, MVC architecture and Java Pe
 	- Name of the winning player
 	- Number of Turns took by a player to win
 
-Note:The table can be sorted by the created/Won time/date.
+Note: The table can be sorted by the created/Won time/date.
 
 ## Requirements:
 
@@ -43,3 +44,4 @@ Linux:
 	- To generate site: $ mvn site
 
 Note: You can see the project site in the target/site folder click in index.html to open the website. The Project site will be soon deployed. Link will be published in the About section of this repository.
+
