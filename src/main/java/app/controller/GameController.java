@@ -111,10 +111,11 @@ public class GameController {
                 return "#fafafa";
             case RED:
                 return "#ef5350";
-            case GREEN:
-                return "#66bb6a";
             case YELLOW:
                 return "#ffee58";
+            case GREEN:
+                return "#66bb6a";
+
         }
         return "#fafafa";
     }

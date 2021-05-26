@@ -93,6 +93,7 @@ public class Game {
         this.player2 = player2;
     }
 
+
     /**
      * Get the current active player.
      *
@@ -110,6 +111,7 @@ public class Game {
     public void setActivePlayer(Player player) {
         activePlayer = player;
     }
+
 
     /**
      * Play a round of the game.

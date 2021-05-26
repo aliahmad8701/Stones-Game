@@ -67,10 +67,10 @@ public class Cell {
                 setColor(CellColor.RED);
                 break;
             case RED:
-                setColor(CellColor.GREEN);
-                break;
-            case GREEN:
                 setColor(CellColor.YELLOW);
+                break;
+            case YELLOW:
+                setColor(CellColor.GREEN);
                 break;
             default:
                 throw new Exceptions.CellEvolvedException();
