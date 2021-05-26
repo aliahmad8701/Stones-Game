@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>hu.unideb.inf</groupId>
     <artifactId>Stones-game</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
     <packaging>jar</packaging>
     <description>Stone game project, developed using JAVA 11.0.1-open. This Project requires JDK 11 or later. This game
         has same goal as a Tic Tac Toe game, Each player can click on the any box and can obtain 3 colors, red , Green

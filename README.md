@@ -1,4 +1,4 @@
-# Stones-Game v1.1
+# Stones-Game v1.2
 
 ### General Information:
 - Game board consist of 3x3 cells.
@@ -26,7 +26,8 @@ Note: The game consists of Business logic. OpenJFX, MVC architecture and Java Pe
 	- Names of players
 	- Name of the winning player
 	- Number of Turns took by a player to win
-Not:The table can be sorted by time in game play
+
+Note:The table can be sorted by the created/Won time/date.
 
 ## Requirements:
 
@@ -39,5 +40,6 @@ Windows:
 
 Linux:
 - In terminal to install use: $ mvn install, to run use: $ mvn exec:java
+	- To generate site: $ mvn site
 
 Note: You can see the project site in the target/site folder click in index.html to open the website. The Project site will be soon deployed. Link will be published in the About section of this repository.
