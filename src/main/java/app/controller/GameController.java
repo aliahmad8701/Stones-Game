@@ -55,12 +55,14 @@ public class GameController {
      */
     public GameController() {
         game = Game.getInstance();
+        game.resetCells();
     }
 
     /**
      * Initialize the controller.
      */
     public void initialize() {
+
         btn0x0.setOnMouseClicked(event -> onCellClicked(0, 0));
         btn0x1.setOnMouseClicked(event -> onCellClicked(0, 1));
         btn0x2.setOnMouseClicked(event -> onCellClicked(0, 2));
@@ -71,6 +73,7 @@ public class GameController {
         btn2x1.setOnMouseClicked(event -> onCellClicked(2, 1));
         btn2x2.setOnMouseClicked(event -> onCellClicked(2, 2));
         lblStatus.setText(game.getActivePlayer().getName() + "'s turn to play.");
+
     }
 
     /**
@@ -84,7 +87,7 @@ public class GameController {
         try {
             cell = game.playRound(x, y);
             scene.lookup(String.format("#btn%dx%d", x, y)).setStyle(String.format("-fx-background-color: %s", getColorValue(cell.getColor())));
-            log.info("Cell {x}, {y} clicked", x, y);
+            log.info("Cell {}, {} clicked", x, y);
             if (game.gameWon()) {
                 handleWonGame();
             } else {

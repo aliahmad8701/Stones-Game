@@ -39,7 +39,7 @@ public class Game {
      * To Initialize the game.
      */
     public void initGame() {
-        board = new Cell[ROWS][COLS];
+        resetCells();
         for (int row = 0; row < ROWS; row++)
             for (int col = 0; col < COLS; col++)
                 board[row][col] = new Cell(row, col);
@@ -47,6 +47,19 @@ public class Game {
         turns = 0;
         leaderboard = new Leaderboard();
     }
+
+
+    /**
+     * To reset the cells/2D Array used.
+     */
+    public void resetCells(){
+        board = new Cell[ROWS][COLS];
+        for (int row = 0; row < ROWS; row++)
+            for (int col = 0; col < COLS; col++)
+                board[row][col] = new Cell(row, col);
+    }
+
+
 
     /**
      * To Get the board of the game.
